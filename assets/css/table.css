@@ -90,7 +90,7 @@
 
 .qna-quick {
     position: relative;
-    border: 1px solid #ffd273;
+    border: 1px solid #ef679a;
     padding: 0 !important;
     border-radius: 5px;
 
@@ -172,13 +172,13 @@ padding: 30px;
 .qna-message-content {
     padding: 20px;
     background: #16181b;
-    border-top: 2px solid #ffd273;
+    border-top: 2px solid #ef679a;
     color: #fff;
-    font-family: 'ns';
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 5px;
     min-height: 88px;
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .qna-writing {
