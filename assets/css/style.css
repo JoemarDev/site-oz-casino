@@ -115,6 +115,9 @@ input:focus {
 }
 
 .app-menu {
+    color: #fff;
+}
+.app-menu a{
     padding: 10px;
     color: #fff;
     font-weight: 600;
@@ -122,18 +125,43 @@ input:focus {
     position: relative;
 }
 
-.app-menu:hover {
+.inner-child-menu {
+    cursor: pointer;
+}
+
+.inner-child-menu:hover {
+    color: #ed558f;
+}
+
+.menu-child {
+    display: none;
+    z-index: 20;
+    width: 200px;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    top: 80px;
+    border-radius: 10px;
+}
+
+.app-menu:hover a {
     background: #ffffff25;
     border-radius: 4px;
     transition: all 0.2s;
 }
 
+.app-menu:hover .menu-child {
+    display: block;
+}
+
+
+
 .app-menu.active {
     background: #ffffff25;
     border-radius: 4px;
+    padding: 9px 0px;
 }
 
-.app-menu.active:before {
+/* .app-menu.active:before {
     content: "";
     transform: scaleX(1);
     background: #ed518b;
@@ -145,7 +173,7 @@ input:focus {
     transform: scaleX(1);
     background: #ed518b;
     background: linear-gradient(90deg, transparent 0, #ef679a 50%, transparent);
-}
+} */
 
 
 .app-menu:before {
@@ -479,3 +507,39 @@ input:focus {
 
 
 
+
+
+#liveFrame {
+    position: relative;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 830px;
+    height: 640px;
+    z-index: 1;
+}
+
+.timer {
+    background: #000;
+    border:2px solid #444;
+    text-align: center;
+    font-size: 28px;
+    padding: 5px 5px;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.bet-button {
+    height: 80px;
+    background: #361502;
+    background: linear-gradient(to top, #361502, #f7cd5d 15px);
+    border: 1px solid #361502;
+    padding-bottom: 6px;
+    border-radius: 10px;
+    transition: all 0.2s;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

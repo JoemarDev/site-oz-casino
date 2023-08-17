@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,13 @@
     <title>SQUID CASINO</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/dialog.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/dialog.css">
+        <link rel="stylesheet" href="./assets/css/table.css">
+        <link rel="stylesheet" href="./assets/css/transaction-table.css">
+        <link rel="stylesheet" href="./assets/css/pagination.css">
     
+
 
     <!-- Odometer Library -->
     <link rel="stylesheet" href="./assets/css/odometer-theme-default.css" />
@@ -22,6 +29,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 </head>
+
 <body class="custom-scroll">
     <!-- Header Section -->
     <section>
@@ -43,8 +51,8 @@
                     <div class="flex items-center gap-2 text-white text-sm font-bold">
                         <p><span class="mx-1 text-body-pink">LV. 1</span>홍길동 님</p>
                         <p>보유머니: <span class="mx-1 text-body-yellow">999,999,999</span> 원</p>
-                        <button class="button-main   btn-invert" >빠른계좌문의</button>
-                        <button class="button-main" onclick="logoutAccount()" >로그아웃</button>
+                        <button class="button-main   btn-invert">빠른계좌문의</button>
+                        <button class="button-main" onclick="logoutAccount()">로그아웃</button>
                     </div>
                 </div>
             </div>
@@ -69,7 +77,7 @@
                             <div onclick="location.href='powerball.html'" class="inner-child-menu py-2 text-sm">키노 사다리</div>
                         </div>
                     </li>
-                    <li class="app-menu"  onclick="OpenCasinoGames()">
+                    <li class="app-menu" onclick="OpenCasinoGames()">
                         <a href="#">카지노</a>
                     </li>
                     <li class="app-menu" onclick="OpenSlotGames()">
@@ -79,9 +87,9 @@
                         <a href="#">스포츠</a>
                     </li>
                     <li class="app-menu">
-                        <a href="announcement.html" >공지사항</a>
+                        <a href="announcement.html">공지사항</a>
                     </li>
-                  
+
                      <li class="app-menu">
                         <a href="betting-history.html">베팅내역</a>
                     </li>
@@ -103,7 +111,7 @@
                 <div class="scroll_row">
                     <div class="scrolling_box">
                         <div class="scr_svg"><img src="./assets/images/icons/speaker.svg" class="svg_scroll"></div>
-                  
+
                         <div class="scr_box" style="animation-duration: 30s;">
                             <span>SQUID 카지노에 오신 것을 환영합니다! </span>
                         </div>
@@ -115,279 +123,219 @@
 
     <!-- Main Body Section -->
     <section id="main-body">
-        <div class="container mx-auto">
-            <!-- Banner Section -->
-            <section class="banner  grid grid-cols-2" >
-                <div class="w-full">
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="banner-slide-child flex items-center">
-                                    <div> 
-                                        <h2 class="cursor-default" >신규 충전 이벤트</h2>
-                                        <button onclick="OpenLoginDialog()" class="!rounded !text-lg button-main mt-4">회원가입</button>
-                                    </div>
+        <div class="container mx-auto bg-body-primary border-2 border-body-secondary p-4">
+            <iframe id="liveFrame" src="https://ntry.com/scores/eos_powerball/3min/main.php" frameborder="0"></iframe>
+            
+            <div class="container  text-white mx-auto bg-body-tertiary border-2 border-body-secondary" style="max-width: 1000px!important;">
+                <div class="grid grid-cols-9 gap-2 px-4 my-2">
+                    <div class="col-span-2   bg-body-secondary p-4">
+                        <div class="text-center mb-2">
+                            <span>08-17</span>
+                            <span class="text-body-yellow font-bold">[260회차]</span>
+                        </div>
+                        <div class="timer">
+                            12:03
+                        </div>
+                        <div class="button-main !py-1 text-sm w-28 m-auto flex items-center ">새로고침</div>
+                      
+                    </div>
+                    <div class="col-span-4   bg-body-secondary p-4 items-center  ">
+                        <div class="h-9 mt-2  flex items-center justify-between font-bold text-sm">
+                            <span class="text-body-pink">보유금액</span>
+                            <span class="text-body-yellow">4,637,134 원</span>
+                        </div>
+                        <div class="h-9  flex items-center justify-between font-bold text-sm">
+                            <span class="text-body-pink">예상배당율</span>
+                            <span class="text-body-yellow">0 배</span>
+                        </div>
+                        <div class="h-9  flex items-center justify-between font-bold text-sm">
+                            <span class="text-body-pink">예상당첨금</span>
+                            <span class="text-body-yellow">0 원</span>
+                        </div>
+                        <div class="h-9  flex items-center justify-between font-bold text-sm">
+                            <span class="text-body-pink">배팅금액</span>
+                            <span class="text-body-yellow">
+                                <input type="text" class="input-1 w-full text-right" value="0">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-span-3 bg-body-secondary p-4">
+                        <div class="grid grid-cols-3 gap-1 text-sm font-bold">
+                            <button class="py-2 bg-body-primary">10,000</button>
+                            <button class="py-2 bg-body-primary">50,000</button>
+                            <button class="py-2 bg-body-primary">100,000</button>
+                            <button class="py-2 bg-body-primary">500,000</button>
+                            <button class="py-2 bg-body-primary">1,000,000</button>
+                            <button class="py-2 bg-body-primary">3,000,000</button>
+                            <button class="py-2 bg-body-primary">올인</button>
+                            <button class="py-2 bg-body-primary">하프</button>
+                            <button class="py-2 bg-body-primary">초기화</button>
+                            <button class="py-2  col-span-3 button-main mt-2 items-center flex justify-center">배팅하기</button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-9 gap-4 px-4 ">
+                    <div class="col-span-2   bg-body-secondary p-4">
+                        <div class="bg-body-primary text-center text-sm p-4 rounded mb-10">MY BETTING</div>
+                        <div class=" text-center text-sm p-4 rounded">선택게임</div>
+                    </div>
+                    <div class="col-span-7   bg-body-secondary p-4 pb-0 items-center  ">
+                        <div class="grid grid-cols-6 gap-4">
+                            <div class="col-span-2">
+                                <h2 class="text-lg font-bold text-body-pink">파워볼</h2>
+                                <div class="grid grid-cols-2 gap-2 py-4">
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/img_bet-odd.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/img_bet-even.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/img_bet-under.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/img_bet-over.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="banner-slide-child flex items-center">
-                                    <div>
-                                        <h2 class="cursor-default">일간 올인 이벤트 5%</h2>
-                                        <button onclick="OpenLoginDialog()" class="!rounded !text-lg button-main mt-4">회원가입</button>
-                                    </div>
+                            <div class="col-span-4">
+                                <h2 class="text-lg font-bold text-body-pink">일반볼</h2>
+                                <div class="grid grid-cols-4 gap-2 pt-4">
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/img_bet-odd.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/img_bet-even.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/img_bet-under.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/img_bet-over.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 pt-2">
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/img_bet-big.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/img_bet-medium.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/img_bet-small.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="grid grid-cols-9 gap-4 px-4 ">
+                    <div class="col-span-2   bg-body-secondary p-4">
+                     
+                    </div>
+                    <div class="col-span-7   bg-body-secondary p-4 py-0 items-center  ">
+                        <div class="grid grid-cols-6 gap-4">
+                            <div class="col-span-6">
+                                <h2 class="text-lg font-bold text-body-pink">일반볼 조합</h2>
+                                <div class="grid grid-cols-4 gap-2 py-4">
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/btn-general_under.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/img_bet-odd.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/btn-general_under.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting//btn-general_over.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="banner-slide-child flex items-center">
-                                    <div>
-                                        <h2 class="cursor-default">레벨별 콤프 이벤트</h2>
-                                        <h2 class="cursor-default">최대 카지노 0.8% 슬롯 1% 지급!</h2>
-                                        <button onclick="OpenLoginDialog()" class="!rounded !text-lg button-main mt-4">회원가입</button>
-                                    </div>
+
+                
+                            </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-9 gap-4 px-4 ">
+                    <div class="col-span-2   bg-body-secondary p-4">
+                
+                    </div>
+                    <div class="col-span-7   bg-body-secondary p-4 py-0 items-center  ">
+                        <div class="grid grid-cols-6 gap-4">
+                            <div class="col-span-6">
+                                <h2 class="text-lg font-bold text-body-pink">파워볼 조합</h2>
+                                <div class="grid grid-cols-4 gap-2 py-4">
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/btn-general_under.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/img_bet-odd.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting/btn-general_under.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
+                                    <button class="bet-button gap-2">
+                                        <img src="./assets/images/betting//btn-general_over.png" alt="">
+                                        <p class="text-black font-bold">1.95</p>
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="banner-model">
-                    <img class="banner-img-girl" src="./assets/images/banner/girl.png" alt="girl">
-                    <img class="banner-img-coins" src="./assets/images/banner/coins.png" alt="coins">
-                    <img class="banner-img-shapes" src="./assets/images/banner/shapes.png" alt="shape">
-                </div>
-            </section>
-
-            <!-- Category Section -->
-            <section class="grid grid-cols-2 gap-2 mb-4">
-                <div class="category-item casino-category" onclick="OpenCasinoGames()">
-                    <img class="default" src="./assets/images/category/default/casino-badge.png" alt="">
-                    <img class="active" src="./assets/images/category/active/casino-badge.png" alt="">
-                </div>
-                <div class="category-item slot-category"  onclick="OpenSlotGames()">
-                    <img class="default" src="./assets/images/category/default/slot-badge.png" alt="">
-                    <img class="active" src="./assets/images/category/active/slot-badge.png" alt="">
-                </div>
-                <div class="category-item sports-category">
-                    <img class="default" src="./assets/images/category/default/sports-badge.png" alt="">
-                    <img class="active" src="./assets/images/category/active/sports-badge.png" alt="">
-                </div>
-                <div class="category-item minigame-category">
-                    <img class="default" src="./assets/images/category/default/minigame-badge.png" alt="">
-                    <img class="active" src="./assets/images/category/active/minigame-badge.png" alt="">
-                </div>
-            </section>
-
-            <!-- Progressive Jackpot -->
-            <section class="container mx-auto mb-4">
-                <div class="jackpot-wrapper">
-                    <div class="jackpot-box grid grid-cols-2">
-                        <div class="jackpot-title">
-                            <h2 class="text-4xl font-bold text-body-yellow mb-2">PROGRESSIVE JACKPOT</h2>
-                            <h3 class="text-xl  text-white">화려한 애니메이션과 3D효과!! 잭팟에 도전하세요!!</h3>
-                        </div>
-                        <div class="ml-auto flex items-center gap-2">
-                            <h2 class="currency-sign">\</h2>
-                            <div id="odometer" class="odometer">85484080</div>
+                
+                
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- Latest Board Section -->
-            <section class="container mb-4">
-                <div class="grid grid-cols-3 gap-2">
-                    <div class="home_board pb-2">
-                        <h3 class="text-body-pink">
-                            <img src="./assets/images/svg/star.svg">
-                            <span>공지사항</span> 
-                        </h3>
-
-                        <ul class="board-lists w-full ">
-                            <li  onclick="OpenLoginDialog()" class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span  class="col-span-2 text-body-pink">[공지사항]</span>
-                                <span class="col-span-4 truncate" >
-                                    <label class="cursor-pointer ">• 출금 규정 안내</label>
-                                </span>
-                                <span  class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                            <li  onclick="OpenLoginDialog()" class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 text-body-pink">[공지사항]</span>
-                                <span class="col-span-4 truncate" >
-                                    <label class="cursor-pointer ">• 배팅 한도 안내</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                            <li  onclick="OpenLoginDialog()" class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 text-body-pink">[공지사항]</span>
-                                <span class="col-span-4 truncate" >
-                                    <label class="cursor-pointer ">• 입출금 은행 점검시간 안내</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                            <li  onclick="OpenLoginDialog()" class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 text-body-pink">[공지사항]</span>
-                                <span class="col-span-4 truncate" >
-                                    <label class="cursor-pointer ">• 입금 규정 안내</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                            <li  onclick="OpenLoginDialog()" class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 text-body-pink">[공지사항]</span>
-                                <span class="col-span-4 truncate" >
-                                    <label class="cursor-pointer ">• 쿠폰 및 콤프 규정 안내</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-      
-                        </ul>
-                    </div>
-                    <div class="home_board pb-2">
-                        <h3 class="text-body-blue">
-                            <img src="./assets/images/svg/rank.svg">
-                            <span>공지사항</span>
-                        </h3>
-
-                        <ul class="board-lists w-full ">
-                            <li onclick="OpenLoginDialog()" class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 text-body-blue">[이벤트]</span>
-                                <span class="col-span-4 truncate" >
-                                    <label class="cursor-pointer ">• SQUID  지인추천 이벤트</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                            <li onclick="OpenLoginDialog()" class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 text-body-blue">[이벤트]</span>
-                                <span class="col-span-4 truncate" >
-                                    <label class="cursor-pointer ">• SQUID  프리스핀 이벤트</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                            <li onclick="OpenLoginDialog()" class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 text-body-blue">[이벤트]</span>
-                                <span class="col-span-4 truncate" >
-                                    <label class="cursor-pointer ">• SQUID  프로모션 이벤트 모음</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                            <li onclick="OpenLoginDialog()" class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 text-body-blue">[이벤트]</span>
-                                <span class="col-span-4 truncate" >
-                                    <label class="cursor-pointer ">• SQUID  출석 이벤트</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                            <li onclick="OpenLoginDialog()" class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 text-body-blue">[이벤트]</span>
-                                <span class="col-span-4 truncate" >
-                                    <label class="cursor-pointer ">• SQUID  프리스핀 이벤트</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div class="home_board pb-2">
-                        <h3 class="text-body-yellow">
-                            <img src="./assets/images/svg/calendar.svg">
-                            <span>공지사항</span>
-                        </h3>
-
-                        <ul class="board-lists w-full ">
-                            <li class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 ">xog*****</span>
-                                <span class="col-span-4  text-body-yellow text-center">
-                                    <label>10,900,000원</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                            <li class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 ">xog*****</span>
-                                <span class="col-span-4 truncate text-body-yellow text-center">
-                                    <label>10,130,000원</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                            <li class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 ">xog*****</span>
-                                <span class="col-span-4 truncate text-body-yellow text-center">
-                                    <label>9,100,000원</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                            <li class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 ">xog*****</span>
-                                <span class="col-span-4 truncate text-body-yellow text-center">
-                                    <label>5,240,000원</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                            <li class="grid grid-cols-9 gap-2 text-white py-3 px-6">
-                                <span class="col-span-2 ">xog*****</span>
-                                <span class="col-span-4 truncate text-body-yellow text-center">
-                                    <label>4,000,000원</label>
-                                </span>
-                                <span class="col-span-3 text-right">2022-10-29</span>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="transaction-history-table-container px-4 mt-2">
+                    
+                
+                    <table class="transaction-history-table">
+                        <thead>
+                            <tr>
+                                <th>베팅회차</th>
+                                <th>베팅내역</th>
+                                <th>적중유무</th>
+                                <th>베팅시간</th>
+                                <th>베팅금</th>
+                                <th>배당</th>
+                                <th>적중금</th>
+                            </tr>
+                
+                        </thead>
+                    </table>
                 </div>
-            </section>
 
-            <!-- Customer Service Section -->
-            <section class="container">
-                <div class="cs-wrapper">
-                    <div class="grid grid-cols-4  px-4">
-                        <div class="px-4 p-2 flex items-center gap-2 border-r border-dashed border-slate-700/50">
-                            <div class="wrapper bg-body-pink w-12 p-2 rounded">
-                                <img src="./assets/images/svg/footer-1.svg" alt="">
-                            </div>
-                            <div class="text-white">
-                                <h2 class="text-lg">365 결제문의</h2>
-                                <h2 class="font-bold text-lg">
-                                    <span>텔레그램</span>
-                                    <span class="text-body-pink">SQUID CASINO</span>
-                                </h2>
-                            </div>
-                        </div>
-                         <div class="px-4 p-2 flex items-center gap-2 border-r border-dashed border-slate-700/50">
-                            <div class="wrapper bg-body-brown w-12 p-2 rounded">
-                                <img src="./assets/images/svg/footer-2.svg" alt="">
-                            </div>
-                            <div class="text-white">
-                                <h2 class="text-lg">365 결제문의</h2>
-                                <h2 class="font-bold text-lg">
-                                    <span>텔레그램</span>
-                                    <span class="text-amber-500">SQUID CASINO</span>
-                                </h2>
-                            </div>
-                        </div>
-                         <div class="px-4 p-2 flex items-center gap-2 border-r border-dashed border-slate-700/50">
-                            <div class="wrapper bg-body-green w-12 p-2 rounded">
-                                <img src="./assets/images/svg/footer-3.svg" alt="">
-                            </div>
-                            <div class="text-white">
-                                <h2 class="text-lg">궁금한 점이 있으세요?</h2>
-                                <h2 class="font-bold text-lg">
-                                 
-                                    <span class="text-green-500">자주 묻는 질문</span>
-                                </h2>
-                            </div>
-                        </div>
-                        <div class="px-4 p-2 flex items-center gap-2 ">
-                            <div class="wrapper bg-body-blue w-12 p-2 rounded">
-                                <img src="./assets/images/svg/footer-4.svg" alt="">
-                            </div>
-                            <div class="text-white">
-                                <h2 class="text-lg">파트너 제휴문의</h2>
-                                <h2 class="font-bold text-lg">
-                                    <span>텔레그램</span>
-                                    <span class="text-sky-400">SQUID Partner</span>
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            </div>
+
+         
+
+        </div>
+
+        
+ 
+
     </section>
 
     <!-- Footer Section -->
@@ -575,14 +523,14 @@
                 <img src="./assets/images/footer/56.png" alt="">
             </div>
         </div>
-    
-    
+
+
         <label class="text-white text-sm">
             Copyright © 2023
             <span class="text-body-pink">SQUID CASINO.</span>
             All right reserved.
         </label>
-    
+
     </div>
     <!-- Footer Section -->
 
@@ -593,7 +541,7 @@
                 <div class="app-dialog-header py-4 relative">
                     <img class="mx-auto w-28" src="./assets/images/logo/logo.png">
                     <img onclick="CloseLoginDialog()" class="cursor-pointer w-8 mx-auto absolute right-5 top-6"
-                         src="./assets/images/svg/close.svg">
+                        src="./assets/images/svg/close.svg">
                 </div>
                 <div class="app-dialog-content bg-body-secondary">
                     <p class="text-center text-body-pink my-2 mb-5 text-lg">로그인 후 이용 가능합니다.</p>
@@ -617,7 +565,8 @@
                         <button onclick="LoginAccount()" style="height: 40px" class=" w-full submit-btn">로그인</button>
                     </form>
                     <div class="text-center">
-                        <label class="text-white text-sm cursor-pointer" onclick="OpenRegisterDialog()">비밀번호를 잊으셨나요?</label>
+                        <label class="text-white text-sm cursor-pointer" onclick="OpenRegisterDialog()">비밀번호를
+                            잊으셨나요?</label>
                     </div>
 
                 </div>
@@ -632,7 +581,7 @@
             class="register-modal h-screen w-full fixed left-0 top-0 bg-black/80 z-20 flex items-center justify-center">
             <div class="app-dialog">
                 <div class="app-dialog-header py-4 relative">
-                    <img class="mx-auto w-40" src="./assets/images/logo/logo.png" >
+                    <img class="mx-auto w-40" src="./assets/images/logo/logo.png">
                     <img onclick="CloseRegisterDialog()" class="cursor-pointer w-8 mx-auto absolute right-5 top-7"
                         src="./assets/images/svg/close.svg">
                 </div>
@@ -809,8 +758,7 @@
             <div class="app-dialog  container mx-auto bg-body-primary p-5 border-8 border-body-secondary">
                 <div class="header flex justify-between w-full p-4 items-center mb-5">
                     <h2 class="text-body-pink font-bold text-2xl">라이브카지노</h2>
-                    <img onclick="CloseCasinoGames()" class="cursor-pointer w-12 "
-                        src="./assets/images/svg/close.svg">
+                    <img onclick="CloseCasinoGames()" class="cursor-pointer w-12 " src="./assets/images/svg/close.svg">
                 </div>
                 <div class="grid grid-cols-5 gap-4 px-4 overflow-y-scroll custom-scroll " style="max-height: 80vh;">
                     <div class="dialog-game-box">
@@ -821,7 +769,7 @@
                                 <h2 class="title">에볼루션</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                          
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -910,7 +858,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Slot Game Casino -->
     <div class="hidden SLOT_GAME_WRAPPER">
         <div class="h-screen py-10  w-full fixed left-0 top-0 bg-black/80 z-10 flex items-center justify-center">
@@ -928,7 +876,7 @@
                                 <h2 class="title">프라그마틱</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -939,7 +887,7 @@
                                 <h2 class="title">마이크로게이밍</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -950,7 +898,7 @@
                                 <h2 class="title">CQ9</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -961,7 +909,7 @@
                                 <h2 class="title">에보플레이</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -972,7 +920,7 @@
                                 <h2 class="title">부운고</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -983,7 +931,7 @@
                                 <h2 class="title">와즈단</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -994,7 +942,7 @@
                                 <h2 class="title">플레이슨</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1005,7 +953,7 @@
                                 <h2 class="title">플레이스타</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1016,7 +964,7 @@
                                 <h2 class="title">하바네로</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1027,7 +975,7 @@
                                 <h2 class="title">릴렉스게이밍</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1038,7 +986,7 @@
                                 <h2 class="title">트리플 프로핏 게이밍</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1049,7 +997,7 @@
                                 <h2 class="title">게임아트</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1060,7 +1008,7 @@
                                 <h2 class="title">블루프린트 게이밍</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1071,7 +1019,7 @@
                                 <h2 class="title">넷엔트</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1082,7 +1030,7 @@
                                 <h2 class="title">레드타이거</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1093,7 +1041,7 @@
                                 <h2 class="title">썬더킥</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1104,7 +1052,7 @@
                                 <h2 class="title">노리밋 시티</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1115,7 +1063,7 @@
                                 <h2 class="title">Mobilots</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1126,7 +1074,7 @@
                                 <h2 class="title">플레이펄스</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1137,7 +1085,7 @@
                                 <h2 class="title">드라군 소프트</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1148,7 +1096,7 @@
                                 <h2 class="title">1x2 게이밍</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1159,7 +1107,7 @@
                                 <h2 class="title">Elk Studios</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1170,7 +1118,7 @@
                                 <h2 class="title">PG 소프트</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1181,7 +1129,7 @@
                                 <h2 class="title">스타게임</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1192,7 +1140,7 @@
                                 <h2 class="title">RTG</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1203,7 +1151,7 @@
                                 <h2 class="title">DREAMGAME</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1214,7 +1162,7 @@
                                 <h2 class="title">TTG</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1225,7 +1173,7 @@
                                 <h2 class="title">제네시스</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1236,7 +1184,7 @@
                                 <h2 class="title">비게이밍</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1247,7 +1195,7 @@
                                 <h2 class="title">BetSoft</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1258,7 +1206,7 @@
                                 <h2 class="title">드림테크</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="dialog-game-box">
@@ -1269,11 +1217,11 @@
                                 <h2 class="title">플레이앤고</h2>
                                 <button class="button-main" onclick="OpenLoginDialog()">게임시작</button>
                             </div>
-                    
+
                         </div>
                     </div>
-                    
-    
+
+
                 </div>
             </div>
         </div>
