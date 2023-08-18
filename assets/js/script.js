@@ -64,6 +64,16 @@ const CloseSlotGames = () => {
 	$(".SLOT_GAME_WRAPPER").hide();
 };
 
+const OpenMiniGames = () => {
+	$("body").css("overflowY", "hidden");
+	$(".MINIGAME_GAME_WRAPPER").show();
+};
+
+const CloseMiniGames = () => {
+	$("body").css("overflowY", "scroll");
+	$(".MINIGAME_GAME_WRAPPER").hide();
+};
+
 const swiper = new Swiper(".swiper", {
 	speed: 400,
 	spaceBetween: 100,
